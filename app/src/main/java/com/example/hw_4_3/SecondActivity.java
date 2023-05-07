@@ -2,6 +2,7 @@ package com.example.hw_4_3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -23,6 +24,10 @@ public class SecondActivity extends AppCompatActivity {
         // создадим объект RecyclerView и привяжем к нему соответствующий id
         RecyclerView recyclerView = findViewById(R.id.list_pet);
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        Разные способы прописывания, второй в activity_second
+//        app:layoutManager="android.support.v7.widget.LinearLayoutM anager"
+
         // создадим адаптер и загрузим в него контейнер с данными
         PetAdapter adapter = new PetAdapter(this, pets);
 
@@ -32,6 +37,8 @@ public class SecondActivity extends AppCompatActivity {
 
     private void setInitialData() {
         // добавление в контейнер pets объектов сущности Pet
+        pets.add( new Pet("ЕНОТ", "Все чаще в России стали выбирать енота в качестве домашнего питомца. Еноты своенравные и хитрые существа, которые не поддаются дрессуре, но отлично обучаются и воспитываются хитростью и лаской. Тут можно провести небольшую параллель с современными домашними кошками. Как и кошки, еноты требуют много игр и внимания, но только когда они сами этого хотят.",
+                R.drawable._raccoon, "РОССИЯ"));
         pets.add( new Pet("МАНГУСТ", "Многие жители Индии отдают предпочтение мангустам. Эти зверьки быстро привязываются к хозяевам, подчиняются им и демонстрируют поведение воспитанного питомца.",
                 R.drawable._mangoose, "ИНДИЯ"));
         pets.add( new Pet("СКУНС", "В США содержать дома скунса – очень модно. Такое животное ласковое, послушное и красивое. Скунсы атакуют врага зловонным оружием, но их заводчики утверждают, что в условиях неволи животные не пользуются им.",
