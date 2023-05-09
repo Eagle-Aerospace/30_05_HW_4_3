@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SecondActivity extends AppCompatActivity {
 
-    // создание коллекции контейнера для данных класса Animal
+    // создание коллекции контейнера для данных класса Pet
     List<Pet> pets = new ArrayList<Pet>();
 
     @Override
